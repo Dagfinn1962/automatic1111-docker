@@ -26,7 +26,7 @@ RUN apt update && apt install -y \
 
 WORKDIR /workspace
 
-RUN git clone https://github.com/armarce/stable-diffusion-webui.git
+RUN git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui
 WORKDIR /workspace/stable-diffusion-webui
 RUN git pull
 
