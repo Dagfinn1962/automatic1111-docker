@@ -50,7 +50,7 @@ COPY --from=build /root/.cache/huggingface /root/.cache/huggingface
 WORKDIR /workspace/stable-diffusion-webui/models/Stable-diffusion
 RUN wget https://huggingface.co/XpucT/Deliberate/resolve/main/Deliberate_v2.safetensors
 
-WORKDIR /workspace
+WORKDIR /workspace/stable-diffusion-webui
 
 SHELL ["/bin/bash", "-c"]
 ENV PATH="${PATH}:/workspace/venv/bin"
