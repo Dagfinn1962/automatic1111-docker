@@ -47,6 +47,11 @@ COPY --from=build /models/v2-1_768-ema-pruned.ckpt /workspace/stable-diffusion-w
 COPY --from=build /models/v2-1_768-ema-pruned.yaml /workspace/stable-diffusion-webui/models/Stable-diffusion/v2-1_768-ema-pruned.yaml
 COPY --from=build /root/.cache/huggingface /root/.cache/huggingface
 
+WORKDIR /workspace/stable-diffusion-webui/models/Stable-diffusion
+RUN wget https://huggingface.co/XpucT/Deliberate/resolve/main/Deliberate_v2.safetensors
+
+WORKDIR /workspace
+
 SHELL ["/bin/bash", "-c"]
 ENV PATH="${PATH}:/workspace/venv/bin"
 
